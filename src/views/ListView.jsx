@@ -77,9 +77,6 @@ export default function ListView({ active, lang }) {
             <div className="he">{w.he}</div>
             <div className="en">{w[lang]}</div>
             <div className="acts">
-              <button className="ibtn" title={T[lang].listen} onClick={() => speak(w.he)}>
-                <SoundIcon />
-              </button>
               <button
                 className={`ibtn star${stars.has(i) ? ' on' : ''}`}
                 title={T[lang].star}
