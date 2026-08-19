@@ -154,7 +154,7 @@ export default function CardsView({ active, lang, showToast }) {
 
       {hintVisible && (
         <div className="fc-hintbar">
-          <span>⌨️</span><span><b>{t.shortcut}</b></span>
+          <span><b>{t.shortcut}</b></span>
           <span>{t.press} <b>{t.spaceBar}</b> {t.flipRest}</span>
           <button className="close" title={t.close} onClick={dismissHint}>×</button>
         </div>
