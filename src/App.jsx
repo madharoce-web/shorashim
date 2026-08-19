@@ -50,7 +50,6 @@ export default function App() {
           <div className="logo he">ש</div>
           <div>
             <div className="t1">Shorashim</div>
-            <div className="t2">{t.subtitle(N)}</div>
           </div>
         </div>
         <nav className="tabs">
