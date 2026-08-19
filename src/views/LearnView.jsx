@@ -1,7 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { WORDS, N, sameMeaning } from '../words';
-import { load, save, shuffle, speak } from '../utils';
-import { SoundIcon } from '../icons';
+import { load, save, shuffle } from '../utils';
 import { T } from '../i18n';
 
 const ROUND = 7;
@@ -238,14 +237,6 @@ export default function LearnView({ active, lang }) {
         <div className="qhead">
           {t.term}
           {lr.recap && <span className="recap-chip">{t.recapChip}</span>}
-          <button
-            className="ibtn"
-            style={{ width: 34, height: 34 }}
-            title={t.listen}
-            onClick={() => speak(w.he)}
-          >
-            <SoundIcon />
-          </button>
           <span style={{ marginLeft: 'auto' }}>{lr.qi + 1} / {lr.round.length}</span>
         </div>
         <div className="qword he">{w.he}</div>

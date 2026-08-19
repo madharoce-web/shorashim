@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import { WORDS } from '../words';
-import { load, save, stripNikud, speak } from '../utils';
-import { SoundIcon, StarIcon, StarFillIcon, SearchIcon } from '../icons';
+import { load, save, stripNikud } from '../utils';
+import { StarIcon, StarFillIcon, SearchIcon } from '../icons';
 import { T } from '../i18n';
 
 export default function ListView({ active, lang }) {
@@ -45,8 +45,8 @@ export default function ListView({ active, lang }) {
   return (
     <>
       <div className="page-head">
-        <h1>{T[lang].listTitle(WORDS.length)}</h1>
-        <p>{T[lang].listSub}</p>
+        <h1>{T[lang].listTitle()}</h1>
+        <p>{T[lang].listSub(WORDS.length)}</p>
       </div>
       <div className="list-tools">
         <div className="search">
@@ -77,9 +77,6 @@ export default function ListView({ active, lang }) {
             <div className="he">{w.he}</div>
             <div className="en">{w[lang]}</div>
             <div className="acts">
-              <button className="ibtn" title={T[lang].listen} onClick={() => speak(w.he)}>
-                <SoundIcon />
-              </button>
               <button
                 className={`ibtn star${stars.has(i) ? ' on' : ''}`}
                 title={T[lang].star}

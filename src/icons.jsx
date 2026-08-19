@@ -1,6 +1,3 @@
-export const SoundIcon = () => (
-  <svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z" /></svg>
-);
 export const StarIcon = () => (
   <svg viewBox="0 0 24 24"><path d="M12 17.3l-5.5 3.3 1.5-6.2-4.9-4.2 6.4-.5L12 3.8l2.5 5.9 6.4.5-4.9 4.2 1.5 6.2z" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" /></svg>
 );

@@ -1,8 +1,8 @@
 import { useState, useEffect, useRef } from 'react';
 import { WORDS, N } from '../words';
-import { load, save, shuffle, speak } from '../utils';
+import { load, save, shuffle } from '../utils';
 import {
-  SoundIcon, XIcon, CheckIcon, UndoIcon, ShufIcon,
+  XIcon, CheckIcon, UndoIcon, ShufIcon,
   RestartIcon, ArrowLIcon, ArrowRIcon, FullIcon,
 } from '../icons';
 import { T } from '../i18n';
@@ -143,11 +143,6 @@ export default function CardsView({ active, lang, showToast }) {
         <div className={`fc-inner${flipped ? ' flipped' : ''}`}>
           <div className="fc-face front">
             <span className="label">{t.term}</span>
-            <span className="corner">
-              <button className="ibtn" title={t.listen} onClick={(e) => { e.stopPropagation(); speak(w.he); }}>
-                <SoundIcon />
-              </button>
-            </span>
             <div className="fc-word he">{w.he}</div>
           </div>
           <div className="fc-face back">

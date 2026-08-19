@@ -2,12 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import ListView from './views/ListView';
 import CardsView from './views/CardsView';
 import LearnView from './views/LearnView';
+import GrammarView from './views/GrammarView';
 import ExamView from './views/ExamView';
-import { N } from './words';
 import { load, save } from './utils';
 import { T } from './i18n';
 
-const TAB_IDS = ['list', 'cards', 'learn', 'exam'];
+const TAB_IDS = ['list', 'cards', 'learn', 'grammar', 'exam'];
 
 export default function App() {
   const [view, setView] = useState('list');
@@ -48,10 +48,7 @@ export default function App() {
       <header className="topbar">
         <div className="brand">
           <div className="logo he">ש</div>
-          <div>
-            <div className="t1">Shorashim</div>
-            <div className="t2">{t.subtitle(N)}</div>
-          </div>
+          <div className="t1">Shorashim</div>
         </div>
         <nav className="tabs">
           {TAB_IDS.map((id) => (
@@ -79,6 +76,9 @@ export default function App() {
         </section>
         <section className={`view${view === 'learn' ? ' active' : ''}`}>
           <LearnView active={view === 'learn'} lang={lang} />
+        </section>
+        <section className={`view${view === 'grammar' ? ' active' : ''}`}>
+          <GrammarView active={view === 'grammar'} lang={lang} />
         </section>
         <section className={`view${view === 'exam' ? ' active' : ''}`}>
           <ExamView active={view === 'exam'} lang={lang} />

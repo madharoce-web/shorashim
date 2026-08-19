@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { WORDS, N, sameMeaning } from '../words';
-import { shuffle, speak } from '../utils';
-import { SoundIcon } from '../icons';
+import { shuffle } from '../utils';
 import { T } from '../i18n';
 
 /* almacén a nivel de módulo: el examen sobrevive al cambio de pestaña */
@@ -131,14 +130,7 @@ export default function ExamView({ active, lang }) {
               style={{ animationDelay: `${Math.min(qi * 40, 320)}ms` }}
             >
               <div className="top">
-                <span style={{ display: 'inline-flex', alignItems: 'center', gap: 4 }}>
-                  {he2en ? t.term : t.defLabel}
-                  {he2en && (
-                    <button className="ibtn" style={{ width: 30, height: 30 }} title={t.listen} onClick={() => speak(w.he)}>
-                      <SoundIcon />
-                    </button>
-                  )}
-                </span>
+                <span>{he2en ? t.term : t.defLabel}</span>
                 <span>{t.qOf(qi + 1, total)}</span>
               </div>
               {he2en
